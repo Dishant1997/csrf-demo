@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="alert alert-success" ng-if="money.message">
+        {{money.message}}
+    </div>
+    <form id="login-form" ng-submit="money.sendAttack()">
+        <button type="submit" class="btn btn-success btn-block">Lucky Draw</button>
+    </form>
+    <a href="/transfer-v2">CSRF Protection</a>
+</div>

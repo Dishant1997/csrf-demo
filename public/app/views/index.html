@@ -1,0 +1,73 @@
+<!DOCTYPE html lang="en">
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IFA: CSRF Project</title>
+
+  <!-- Angular routing -->
+  <base href="/">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="app/views/styles/app.css" />
+</head>
+
+<body ng-app="app" ng-controller="sessCtrl as sess">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">IFA: CSRF Project</a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="navbar-section"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" ng-if="!sess.loggedIn">
+        <div class="navbar-right">
+          <a type="button" href="/login" class="btn btn-primary navbar-btn">Log in</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/signup">Sign up</a></li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse" ng-if="sess.loggedIn">
+        <div class="navbar-right">
+          <a type="button" ng-click="sess.logout()" class="btn btn-danger navbar-btn">Log out</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/transfer">Transfer Funds</a></li>
+          <!-- <li><a href="">Jenish</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div ng-view style="padding-top: 60px"></div>
+
+  <!-- Libraries and Frameworks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.min.js"></script>
+
+  <!-- Angular Scripts -->
+  <script src="app/controllers/accountCtrl.js"></script>
+  <script src="app/controllers/dashboardCtrl.js"></script>
+  <script src="app/controllers/transferCtrl.js"></script>
+  <script src="app/services/accountService.js"></script>
+  <script src="app/routes.js"></script>
+  <script src="app/app.js"></script>
+</body>
+
+</html>

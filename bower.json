@@ -1,0 +1,26 @@
+{
+  "name": "csrf-demo",
+  "description": "Demonstration used for my CIS 491 class (Secure Web Apps)",
+  "main": "index.js",
+  "authors": [
+    "Jonathan Diep"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "CSRF",
+    "XSRF"
+  ],
+  "homepage": "https://github.com/jonathandiep/CSRF-Demo",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.6",
+    "angular-route": "^1.5.6"
+  }
+}

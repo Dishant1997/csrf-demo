@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="alert alert-success" ng-if="money.message">
+    {{money.message}}
+  </div>
+  <form id="login-form" ng-submit="money.send()">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>Transfer Money (CSRF Token)</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="control-label">Email of Recipient</label>
+          <input type="email" class="form-control input-lg" ng-model="money.send.email" required />
+        </div>
+
+        <label class="control-label">Amount</label>
+        <div class="form-group input-group">
+          <span class="input-group-addon">$</span>
+          <input type="number" step=".01" min="0" class="form-control input-lg" ng-model="money.send.amount" required />
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Send</button>
+      </div>
+    </div>
+  </form>
+</div>

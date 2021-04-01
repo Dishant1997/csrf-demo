@@ -1,0 +1,41 @@
+{
+  "name": "csrf-demo",
+  "version": "1.0.0",
+  "description": "Demonstration used for my CIS 491 class (Secure Web Apps)",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "build": "react-scripts build",
+    "deploy": "aws s3 sync build/ s3://acerelocations-frontend --acl public-read"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathandiep/CSRF-Demo.git"
+  },
+  "keywords": [
+    "CSRF",
+    "XSRF"
+  ],
+  "author": "Jonathan Diep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathandiep/CSRF-Demo/issues"
+  },
+  "homepage": "https://github.com/jonathandiep/CSRF-Demo#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "mysql": "^2.10.2",
+    "nodemon": "^2.0.7",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.7.0"
+  }
+}
